@@ -1,0 +1,54 @@
+- .eslintrc.json
+- .gitignore
+- app/
+  - api/
+    - quiz/
+      - [quizid]/
+        - route.ts
+    - user/
+      - [userid]/
+        - route.ts
+  - components/
+    - Layout/
+      - Footer.tsx
+      - Layout.tsx
+      - Navbar.tsx
+    - Quiz/
+      - AnswerOption.tsx
+      - Question.tsx
+      - Quiz.tsx
+      - Result.jsx
+      - Timer.tsx
+    - User/
+      - Student.tsx
+      - Teacher.tsx
+      - User.tsx
+  - favicon.ico
+  - globals.css
+  - layout.tsx
+  - page.tsx
+  - quiz/
+    - create/
+      - page.tsx
+    - layout.tsx
+    - leaderboard/
+      - page.tsx
+    - [quizid]/
+      - layout.tsx
+      - page.tsx
+- getStructure.js
+- lib/
+  - db.js
+- next-env.d.ts
+- next.config.js
+- package-lock.json
+- package.json
+- postcss.config.js
+- public/
+  - next.svg
+  - vercel.svg
+- README.md
+- styles/
+  - globals.css
+- tailwind.config.ts
+- tsconfig.json
