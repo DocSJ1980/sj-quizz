@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "./generated/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Quiz {
+  id          String    @id   @default(uuid())
+  name        String
+  userId      String
+  questions  Question[] @relation("QuizToQuestion")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Question {
+  id            String    @id   @default(uuid())
+  quizId        String
+  quiz          Quiz @relation("QuizToQuestion", fields: [quizId], references: [id])
+  que           String
+  correctA      String
+  opt1          String
+  opt2          String
+  opt3          String
+  opt4          String
+  time          Int
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([quizId])
+}
+
